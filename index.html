@@ -96,13 +96,19 @@ body {
 
 .quote-refresh {
   cursor: pointer;
-  opacity: 0.35;
-  font-size: 0.82em;
-  transition: opacity 0.2s, transform 0.3s;
+  font-size: 0.8em;
+  padding: 4px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--subsection-h3);
+  transition: all 0.2s;
   flex-shrink: 0;
+  opacity: 0.7;
+  user-select: none;
 }
-.quote-refresh:hover { opacity: 0.7; }
-.quote-refresh.spinning { transform: rotate(360deg); }
+.quote-refresh:hover { opacity: 1; background: var(--tag-bg); }
+.quote-refresh.spinning { opacity: 0.5; pointer-events: none; }
 
 /* Sidebar */
 .sidebar {
@@ -505,7 +511,7 @@ mark {
   <div class="app-layout">
     <div class="quote-bar" id="quoteBar">
       <span class="quote-text" id="quoteText">💬 加载中...</span>
-      <span class="quote-refresh" id="quoteRefresh" title="换一句">🔄</span>
+      <span class="quote-refresh" id="quoteRefresh" title="换一句">换一句</span>
     </div>
     <div class="app-body">
       <nav class="sidebar">
