@@ -6,49 +6,53 @@
 <title>初中高中物理化学公式定理大全</title>
 <style>
 :root, [data-theme="light"] {
-  --bg: #f0f2f5;
-  --sidebar-bg: #1a1a2e;
-  --sidebar-text: #d0d0e8;
+  --bg: #f5f5fa;
+  --sidebar-bg: #171728;
+  --sidebar-text: #c8c8e8;
   --card-bg: #ffffff;
-  --text: #2c2c3e;
-  --heading: #101026;
-  --border: #e4e4ed;
-  --accent: #e94560;
-  --accent2: #3a6ea5;
-  --formula-bg: #f4f6fc;
-  --tag-bg: #eef0f5;
+  --text: #2a2a3a;
+  --heading: #1a1a2e;
+  --border: #e2e2ee;
+  --accent: #4f46e5;
+  --accent-subtle: #eef0ff;
+  --formula-bg: #f5f6ff;
+  --tag-bg: #eef0f8;
   --highlight: #fff3cd;
-  --physics: #3a8fd4;
-  --chemistry: #2db06b;
-  --shadow: 0 2px 12px rgba(0,0,0,0.06);
-  --subsection-h3: #3a3a5c;
-  --kp-text: #3a3a5c;
-  --card-hover-shadow: 0 6px 24px rgba(0,0,0,0.1);
+  --physics: #6366f1;
+  --chemistry: #818cf8;
+  --shadow: 0 2px 12px rgba(79,70,229,0.06);
+  --subsection-h3: #4a4a6a;
+  --kp-text: #4a4a6a;
+  --card-hover-shadow: 0 6px 24px rgba(79,70,229,0.10);
   --sidebar-hover: rgba(255,255,255,0.06);
-  --tag-text: #666;
+  --tag-text: #6a6a8a;
+  --theorem-border: #f59e0b;
+  --section-bottom: #4f46e5;
 }
 
 [data-theme="dark"] {
-  --bg: #0f0f1a;
-  --sidebar-bg: #0a0a14;
-  --sidebar-text: #d0d0e8;
-  --card-bg: #1a1a30;
-  --text: #e0e0f0;
-  --heading: #f0f0ff;
-  --border: #2a2a48;
-  --accent: #ff6b81;
-  --accent2: #8bb4f0;
-  --formula-bg: #14142e;
-  --tag-bg: #222240;
-  --highlight: #665500;
-  --physics: #6bc5f7;
-  --chemistry: #6bdb9a;
+  --bg: #0d0d1a;
+  --sidebar-bg: #080812;
+  --sidebar-text: #b0b0d8;
+  --card-bg: #16162a;
+  --text: #d8d8ee;
+  --heading: #e8e8f8;
+  --border: #28284a;
+  --accent: #818cf8;
+  --accent-subtle: #1e1e3a;
+  --formula-bg: #12122a;
+  --tag-bg: #1e1e3a;
+  --highlight: #554400;
+  --physics: #818cf8;
+  --chemistry: #a5b4fc;
   --shadow: 0 2px 20px rgba(0,0,0,0.45);
-  --subsection-h3: #d0d0e8;
-  --kp-text: #d0d0e8;
+  --subsection-h3: #b0b0d8;
+  --kp-text: #b0b0d8;
   --card-hover-shadow: 0 6px 28px rgba(0,0,0,0.5);
   --sidebar-hover: rgba(255,255,255,0.08);
-  --tag-text: #aaa;
+  --tag-text: #8888aa;
+  --theorem-border: #fbbf24;
+  --section-bottom: #818cf8;
 }
 
 
@@ -80,7 +84,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  background: linear-gradient(135deg, var(--card-bg) 0%, var(--bg) 100%);
+  background: var(--card-bg);
   border-bottom: 1px solid var(--border);
 }
 
@@ -152,7 +156,7 @@ body {
 }
 
 .sidebar .search-box input::placeholder { color: rgba(255,255,255,0.35); }
-.sidebar .search-box input:focus { background: rgba(255,255,255,0.12); box-shadow: 0 0 0 2px rgba(233,69,96,0.3); }
+.sidebar .search-box input:focus { background: rgba(255,255,255,0.12); box-shadow: 0 0 0 2px rgba(129,140,248,0.3); }
 
 .search-count {
   display: block;
@@ -224,7 +228,7 @@ body {
 }
 
 .sidebar .nav-item.active {
-  background: rgba(233,69,96,0.1);
+  background: rgba(129,140,248,0.1);
   color: #fff;
   border-left-color: var(--accent);
 }
@@ -263,7 +267,7 @@ body {
   color: var(--heading);
   padding-bottom: 10px;
   margin-bottom: 22px;
-  border-bottom: 3px solid var(--accent);
+  border-bottom: 3px solid var(--section-bottom);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -338,12 +342,12 @@ body {
   padding: 20px 26px;
   margin-bottom: 16px;
   box-shadow: var(--shadow);
-  border-left: 4px solid #f0a030;
+  border-left: 4px solid var(--theorem-border);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .theorem-card:hover { transform: translateY(-2px); box-shadow: var(--card-hover-shadow); }
 .theorem-card h3 {
-  color: #d48720;
+  color: var(--theorem-border);
   margin-bottom: 8px;
   font-size: 1.05em;
   font-weight: 600;
@@ -457,7 +461,7 @@ mark {
   color: #fff;
   font-size: 1.4em;
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(233,69,96,0.35);
+  box-shadow: 0 4px 16px rgba(129,140,248,0.35);
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.3s, transform 0.3s;
