@@ -6,44 +6,51 @@
 <title>初中高中物理化学公式定理大全</title>
 <style>
 :root, [data-theme="light"] {
-  --bg: #f8f9fa;
+  --bg: #f0f2f5;
   --sidebar-bg: #1a1a2e;
-  --sidebar-text: #e0e0e0;
-  --card-bg: #fff;
-  --text: #333;
-  --heading: #16213e;
-  --border: #e0e0e0;
+  --sidebar-text: #d0d0e8;
+  --card-bg: #ffffff;
+  --text: #2c2c3e;
+  --heading: #101026;
+  --border: #e4e4ed;
   --accent: #e94560;
-  --accent2: #0f3460;
-  --formula-bg: #f0f4ff;
-  --tag-bg: #e8edf5;
+  --accent2: #3a6ea5;
+  --formula-bg: #f4f6fc;
+  --tag-bg: #eef0f5;
   --highlight: #fff3cd;
-  --physics: #3498db;
-  --chemistry: #2ecc71;
-  --shadow: 0 2px 12px rgba(0,0,0,0.08);
-  --subsection-h3: #555;
-  --kp-text: #666;
+  --physics: #3a8fd4;
+  --chemistry: #2db06b;
+  --shadow: 0 2px 12px rgba(0,0,0,0.06);
+  --subsection-h3: #3a3a5c;
+  --kp-text: #3a3a5c;
+  --card-hover-shadow: 0 6px 24px rgba(0,0,0,0.1);
+  --sidebar-hover: rgba(255,255,255,0.06);
+  --tag-text: #666;
 }
 
 [data-theme="dark"] {
-  --bg: #1a1a2e;
-  --sidebar-bg: #111122;
-  --sidebar-text: #c0c0d0;
-  --card-bg: #252540;
-  --text: #d0d0d0;
-  --heading: #e0e0f0;
-  --border: #3a3a55;
+  --bg: #0f0f1a;
+  --sidebar-bg: #0a0a14;
+  --sidebar-text: #d0d0e8;
+  --card-bg: #1a1a30;
+  --text: #e0e0f0;
+  --heading: #f0f0ff;
+  --border: #2a2a48;
   --accent: #ff6b81;
-  --accent2: #7b9fd4;
-  --formula-bg: #1e1e38;
-  --tag-bg: #2a2a45;
-  --highlight: #5a4a00;
-  --physics: #5dade2;
-  --chemistry: #58d68d;
-  --shadow: 0 2px 16px rgba(0,0,0,0.3);
-  --subsection-h3: #b0b0c0;
-  --kp-text: #b0b0c0;
+  --accent2: #8bb4f0;
+  --formula-bg: #14142e;
+  --tag-bg: #222240;
+  --highlight: #665500;
+  --physics: #6bc5f7;
+  --chemistry: #6bdb9a;
+  --shadow: 0 2px 20px rgba(0,0,0,0.45);
+  --subsection-h3: #d0d0e8;
+  --kp-text: #d0d0e8;
+  --card-hover-shadow: 0 6px 28px rgba(0,0,0,0.5);
+  --sidebar-hover: rgba(255,255,255,0.08);
+  --tag-text: #aaa;
 }
+
 
 * { margin:0; padding:0; box-sizing:border-box; }
 
@@ -62,64 +69,66 @@ body {
   min-width: 280px;
   background: var(--sidebar-bg);
   color: var(--sidebar-text);
-  padding: 24px 0;
+  padding: 24px 0 32px;
   position: sticky;
   top: 0;
   height: 100vh;
   overflow-y: auto;
   z-index: 100;
+  border-right: 1px solid rgba(255,255,255,0.04);
 }
 
 .sidebar h2 {
-  padding: 0 20px 20px;
-  font-size: 1.3em;
+  padding: 0 24px 20px;
+  font-size: 1.2em;
+  font-weight: 700;
   color: #fff;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  margin-bottom: 12px;
-  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
 }
 
 .sidebar .search-box {
-  margin: 0 16px 16px;
+  margin: 0 18px 16px;
 }
 
 .sidebar .search-box input {
   width: 100%;
   padding: 10px 14px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
-  background: rgba(255,255,255,0.1);
-  color: #fff;
-  font-size: 0.9em;
+  background: rgba(255,255,255,0.06);
+  color: #e0e0f0;
+  font-size: 0.88em;
   outline: none;
-  transition: background 0.3s;
+  transition: background 0.25s, box-shadow 0.25s;
 }
 
-.sidebar .search-box input::placeholder { color: rgba(255,255,255,0.5); }
-.sidebar .search-box input:focus { background: rgba(255,255,255,0.18); }
+.sidebar .search-box input::placeholder { color: rgba(255,255,255,0.35); }
+.sidebar .search-box input:focus { background: rgba(255,255,255,0.12); box-shadow: 0 0 0 2px rgba(233,69,96,0.3); }
 
 .search-count {
   display: block;
-  color: rgba(255,255,255,0.5);
-  font-size: 0.75em;
-  padding: 4px 14px 0;
-  min-height: 20px;
+  color: rgba(255,255,255,0.35);
+  font-size: 0.73em;
+  padding: 6px 4px 0;
+  min-height: 22px;
+  letter-spacing: 0.3px;
 }
 
 .theme-toggle {
   display: block;
-  margin: 0 auto 12px;
-  padding: 6px 14px;
-  border: 1px solid rgba(255,255,255,0.2);
+  margin: 0 auto 14px;
+  padding: 6px 16px;
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: 20px;
-  background: rgba(255,255,255,0.08);
-  color: #fff;
-  font-size: 0.85em;
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.7);
+  font-size: 0.82em;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.25s;
 }
-
-.theme-toggle:hover { background: rgba(255,255,255,0.16); }
+.theme-toggle:hover { background: rgba(255,255,255,0.1); color: #fff; }
 
 .subsection h3 { color: var(--subsection-h3); }
 .kp-card p { color: var(--kp-text); }
@@ -129,12 +138,12 @@ body {
 }
 
 .sidebar .nav-group-title {
-  padding: 12px 20px;
-  font-size: 0.85em;
+  padding: 10px 24px;
+  font-size: 0.78em;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.3);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -142,33 +151,33 @@ body {
   user-select: none;
 }
 
-.sidebar .nav-group-title:hover { color: rgba(255,255,255,0.8); }
-.sidebar .nav-group-title .arrow { transition: transform 0.3s; font-size: 0.7em; }
+.sidebar .nav-group-title:hover { color: rgba(255,255,255,0.6); }
+.sidebar .nav-group-title .arrow { transition: transform 0.2s; font-size: 0.6em; }
 .sidebar .nav-group-title .arrow.open { transform: rotate(90deg); }
-.sidebar .nav-group-title .icon { font-size: 1.1em; }
+.sidebar .nav-group-title .icon { font-size: 1em; }
 
-.sidebar .nav-items { overflow: hidden; transition: max-height 0.3s; }
+.sidebar .nav-items { overflow: hidden; transition: max-height 0.25s; }
 .sidebar .nav-items.collapsed { max-height: 0 !important; }
 
 .sidebar .nav-item {
   display: block;
-  padding: 8px 20px 8px 36px;
-  color: rgba(255,255,255,0.7);
+  padding: 7px 24px 7px 40px;
+  color: rgba(255,255,255,0.5);
   text-decoration: none;
-  font-size: 0.88em;
+  font-size: 0.85em;
   cursor: pointer;
   transition: all 0.2s;
   border-left: 3px solid transparent;
 }
 
 .sidebar .nav-item:hover {
-  background: rgba(255,255,255,0.06);
-  color: #fff;
-  border-left-color: var(--accent);
+  background: var(--sidebar-hover);
+  color: rgba(255,255,255,0.85);
+  border-left-color: rgba(255,255,255,0.2);
 }
 
 .sidebar .nav-item.active {
-  background: rgba(233,69,96,0.15);
+  background: rgba(233,69,96,0.1);
   color: #fff;
   border-left-color: var(--accent);
 }
@@ -176,7 +185,7 @@ body {
 /* Main */
 .main {
   flex: 1;
-  padding: 32px 40px;
+  padding: 36px 44px;
   max-width: 1100px;
   overflow-y: auto;
 }
@@ -184,40 +193,43 @@ body {
 .main h1 {
   font-size: 2em;
   color: var(--heading);
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   letter-spacing: 0.5px;
+  font-weight: 700;
 }
 
 .main .subtitle {
-  color: #888;
-  margin-bottom: 32px;
-  font-size: 0.95em;
+  color: var(--subsection-h3);
+  margin-bottom: 36px;
+  font-size: 0.92em;
+  opacity: 0.7;
 }
 
 /* Section */
 .section {
-  margin-bottom: 40px;
+  margin-bottom: 44px;
   scroll-margin-top: 24px;
 }
 
 .section-title {
-  font-size: 1.5em;
+  font-size: 1.35em;
   color: var(--heading);
   padding-bottom: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   border-bottom: 3px solid var(--accent);
   display: flex;
   align-items: center;
   gap: 10px;
+  font-weight: 600;
 }
 
-.section-title .icon { font-size: 1.2em; }
+.section-title .icon { font-size: 1.1em; }
 
 /* Cards */
 .card {
   background: var(--card-bg);
-  border-radius: 12px;
-  padding: 24px;
+  border-radius: 14px;
+  padding: 22px 26px;
   margin-bottom: 16px;
   box-shadow: var(--shadow);
   border-left: 4px solid var(--physics);
@@ -225,36 +237,39 @@ body {
 }
 
 .card.chemistry { border-left-color: var(--chemistry); }
-.card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
+.card:hover { transform: translateY(-3px); box-shadow: var(--card-hover-shadow); }
 
 .card h3 {
-  font-size: 1.15em;
+  font-size: 1.08em;
   color: var(--heading);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .card .formula {
   background: var(--formula-bg);
-  border-radius: 8px;
-  padding: 16px 20px;
-  margin: 12px 0;
+  border-radius: 10px;
+  padding: 14px 20px;
+  margin: 10px 0;
   font-family: "Times New Roman", "STIX Two Math", serif;
-  font-size: 1.15em;
-  color: #2c3e50;
+  font-size: 1.2em;
+  color: var(--heading);
   text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   overflow-x: auto;
   white-space: nowrap;
+  border: 1px solid var(--border);
 }
 
 .card .desc {
-  color: #666;
+  color: var(--text);
   font-size: 0.92em;
-  line-height: 1.8;
+  line-height: 1.85;
+  opacity: 0.88;
 }
 
 .card .tags {
-  margin-top: 10px;
+  margin-top: 12px;
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
@@ -262,64 +277,73 @@ body {
 
 .card .tag {
   background: var(--tag-bg);
-  padding: 3px 10px;
-  border-radius: 12px;
-  font-size: 0.78em;
-  color: #666;
+  padding: 4px 12px;
+  border-radius: 14px;
+  font-size: 0.75em;
+  color: var(--tag-text);
+  letter-spacing: 0.3px;
 }
 
 /* Theorem card */
 .theorem-card {
   background: var(--card-bg);
-  border-radius: 12px;
-  padding: 20px 24px;
+  border-radius: 14px;
+  padding: 20px 26px;
   margin-bottom: 16px;
   box-shadow: var(--shadow);
-  border-left: 4px solid #f39c12;
+  border-left: 4px solid #f0a030;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-
+.theorem-card:hover { transform: translateY(-2px); box-shadow: var(--card-hover-shadow); }
 .theorem-card h3 {
-  color: #e67e22;
-  margin-bottom: 6px;
+  color: #d48720;
+  margin-bottom: 8px;
+  font-size: 1.05em;
+  font-weight: 600;
 }
-
 .theorem-card .content {
-  color: #555;
-  line-height: 1.8;
+  color: var(--text);
+  line-height: 1.85;
+  font-size: 0.92em;
+  opacity: 0.88;
 }
 
 /* Knowledge point */
 .kp-card {
   background: var(--card-bg);
-  border-radius: 12px;
-  padding: 18px 24px;
+  border-radius: 14px;
+  padding: 16px 24px;
   margin-bottom: 14px;
   box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-
+.kp-card:hover { transform: translateY(-2px); box-shadow: var(--card-hover-shadow); }
 .kp-card h4 {
   color: var(--accent2);
   margin-bottom: 6px;
-  font-size: 1.02em;
+  font-size: 0.98em;
+  font-weight: 600;
 }
-
 .kp-card p {
-  color: #666;
-  font-size: 0.92em;
-  line-height: 1.8;
+  color: var(--kp-text);
+  font-size: 0.9em;
+  line-height: 1.85;
+  opacity: 0.88;
 }
 
 /* Subsection */
 .subsection {
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 
 .subsection h3 {
-  font-size: 1.2em;
-  color: #555;
-  margin-bottom: 14px;
-  padding-left: 12px;
-  border-left: 3px solid #ddd;
+  font-size: 1.08em;
+  color: var(--subsection-h3);
+  margin-bottom: 16px;
+  padding-left: 14px;
+  border-left: 3px solid var(--accent);
+  font-weight: 600;
+  opacity: 0.85;
 }
 
 /* Search highlight */
@@ -335,9 +359,11 @@ mark {
   .sidebar {
     width: 100%; min-width: unset; height: auto;
     position: relative; padding: 16px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
   }
   .main { padding: 20px; }
-  .card .formula { font-size: 1em; }
+  .card .formula { font-size: 1em; white-space: normal; overflow-x: auto; }
   .back-to-top {
     bottom: 20px;
     right: 16px;
@@ -345,21 +371,27 @@ mark {
     height: 44px;
     font-size: 1.2em;
   }
+  .section-title { font-size: 1.2em; }
+  .card { padding: 16px 18px; }
+  .card h3 { font-size: 1em; }
 }
 
 /* No results */
 .no-results {
   text-align: center;
-  padding: 60px 20px;
-  color: #aaa;
+  padding: 80px 20px;
+  color: var(--subsection-h3);
   font-size: 1.1em;
+  opacity: 0.6;
 }
+.no-results small { font-size: 0.85em; }
 
 /* scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #aaa; }
+.sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+.main::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--tag-text); }
 
 .formula sup { font-size: 0.7em; }
 .formula sub { font-size: 0.75em; }
